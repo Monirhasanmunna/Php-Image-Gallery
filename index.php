@@ -52,6 +52,16 @@
         <?php 
         }
         ?>
+
+        <?php 
+            if($data = mysqli_num_rows($image) < 1){
+        ?>
+            <div class="message" style="width:100%;">
+                <h4 class="text-center">No Picture Found.</h4>
+            </div>
+        <?php
+            }
+        ?>
     </div>    
 </div>
 </section>
