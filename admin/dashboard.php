@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-------Font Awesome cdn------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-------Data Tables-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css"/>
+    <title>Admin </title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3 class="Brand m-3">
+          <span class="fa fa-tachometer"></span>
+          <span>Dashboard</span>
+        </h3>
+        <span class="ti-menu alt"></span>
+      </div>
+
+      <div class="sidebar-menu">
+        <ul>
+          <li class="nav-link" >
+            <a href="home.php?page=dashboard">
+              <span class="fa fa-home"></span>
+              <span>Home</span>
+            </a>
+          </li>
+        <li class="nav-link">
+          <a href="index.php">
+            <span class="fa fa-bars"></span>
+            <span>Images</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="form.php">
+            <span class="fa fa-plus"></span>
+            <span>Add New</span>
+          </a>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+    <!----Main Content----->
+    <div class="main-content">
+      <main>
+
+     
+      <h2 class="py-3">Overview</h2>
+
+        <div class="container">
+          <div class="row">
+                <div class="col-md-4">
+                  <!--card-->
+                  <div class="card">
+                      <div class="card-body bg-success">
+                          <div class="rotate">
+                              <i class="fa fa-user fa-4x"></i>
+                          </div>
+                          <h6 class="text-uppercase text-white">Users</h6>
+                          <h1 class="display-4 text-white">134</h1>
+                      </div>
+                  </div>
+                  <!--card-->
+                </div>
+                <div class="col-md-4">
+                  <!--card-->
+                  <div class="card">
+                      <div class="card-body bg-primary">
+                          <div class="rotate">
+                              <i class="fa fa-user fa-4x"></i>
+                          </div>
+                          <h6 class="text-uppercase text-white">Users</h6>
+                          <h1 class="display-4 text-white">134</h1>
+                      </div>
+                  </div>
+                  <!--card-->
+                </div>
+                <div class="col-md-4">
+                  <!--card-->
+                  <div class="card">
+                      <div class="card-body bg-danger">
+                          <div class="rotate">
+                              <i class="fa fa-user fa-4x"></i>
+                          </div>
+                          <h6 class="text-uppercase text-white">Users</h6>
+                          <h1 class="display-4 text-white">134</h1>
+                      </div>
+                  </div>
+                  <!--card-->
+                </div>
+          </div>
+        </div>
+        
+        </main>
+      <!----main---->
+    </div>
+    <!----Main Content end--->
+
+    <!-- Option 1: Bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-------Sweet Alert------>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-----Data Table Js-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.js"></script>
+    <!------For add notes---->
+  </body>
+</html>

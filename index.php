@@ -1,18 +1,64 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!----Bootstrap Css--->
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <!-------Font Awesome cdn------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
+<body>
+    <!-------Nav------>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Gallery</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+            <!-- <a class="nav-link text-white" href="admin/dashboard.php" target="__blank">Dashboard</a> -->
 
-    <br>
+            <a class="btn btn-danger" href="admin/dashboard.php" target="_blank">Dashboard</a>
+        </li>
+        </li>
+        </ul>
+    </div>
+    </nav>
+<?php
+  include_once 'db.php';
 
-    <a href="" class="btn btn-primary">Add New</a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  </body>
+  $db = new db();
+  $image = $db->allimage();
+?>
+<section class="events" style="padding-bottom:100px;">
+<div class="container">
+    <div class="row">
+        <h1 class="text-center col-md-12 events-header">Gallery</h1>
+        <?php 
+          while($data = mysqli_fetch_assoc($image)){
+        ?>
+        <div class="col-lg-3 mr-2">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top img-fluid"  src="<?php echo $data['image'] ?>" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $data['title'] ?></h5>
+                <p class="card-text"><?php echo $data['description'] ?></p>
+              </div>
+            </div>
+        </div>
+        <?php 
+        }
+        ?>
+    </div>    
+</div>
+</section>
+<!------Jquery--->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!----Bootstrap js------->
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/bootstrap.bundle.js"></script>
+</body>
 </html>
