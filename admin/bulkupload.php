@@ -3,7 +3,7 @@
   $db = new db();
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $insert = $db->insert($_POST['title'],$_POST['description'], $_FILES);
+    $insert = $db->excelupload($_FILES);
   }
 ?>
 <!doctype html>
@@ -63,32 +63,21 @@
         <div class="card">
           <div class="row">
             <div class="col-lg-12">
-            <a href="../admin/bulkupload.php" class="btn btn-sm btn-info float-right mr-3 mt-2" style='width:100px;'>Upload</a>
-              <a href="../admin/index.php" class="btn btn-sm btn-primary float-right mr-3 mt-2" style='width:100px;'>Back</a>
+              <a href="../admin/form.php" class="btn btn-sm btn-primary float-right mr-3 mt-2" style='width:100px;'>Back</a>
             </div>
           </div>
           <div class="card-body">
             <div class="card-title px-3">
-              <h3>Add New Image</h3>
+              <h3>Upload Excel File</h3>
             </div>
             <div class="row mt-3">
               <div class="col-lg-12">
                 <form action="#" method="post" enctype="multipart/form-data">
                   <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title Here">
-                  </div>
-                  <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control" id="image">
+                    <input type="file" name="excel" class="form-control" id="image">
                   </div>
-
-                  <label for="image" class="form-label">Description</label>
-                  <div class="form-floating mb-2">
-                    <textarea class="form-control" name="description" placeholder="Leave a comment here"
-                      id="floatingTextarea2" style="height: 100px"></textarea>
-                  </div>
-                  <button type="submit" name="submit" class="btn btn-sm btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-sm btn-primary">Import</button>
                 </form>
               </div>
             </div>

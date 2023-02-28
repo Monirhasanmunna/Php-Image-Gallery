@@ -38,6 +38,36 @@ class db{
         }
     }
 
+    public function excelupload($file)
+    {
+            $fileName = $file["excel"]["name"];
+			$fileExtension = explode('.', $fileName);
+            $fileExtension = strtolower(end($fileExtension));
+			$newFileName = date("Y.m.d") . " - " . date("h.i.sa") . "." . $fileExtension;
+
+			$targetDirectory = "uploads/" . $newFileName;
+			move_uploaded_file($file['excel']['tmp_name'], $targetDirectory);
+
+			error_reporting(0);
+			ini_set('display_errors', 0);
+
+			require 'excelReader/excel_reader2.php';
+			require 'excelReader/SpreadsheetReader.php';
+
+			$reader = new SpreadsheetReader($targetDirectory);
+			foreach($reader as $key => $row){
+				$title = $row[0];
+				$description = $row[1];
+				$sql = "INSERT INTO `gallery`(`title`, `description`) VALUES ('$title','$description')";
+                $query = mysqli_query($this->conn, $sql);
+			}
+
+            if($query){
+                header("Location: ../admin/index.php", true, 301);
+            }else{
+                echo mysqli_error($this->conn);
+            }
+    }
 
     public function allimage()
     {
