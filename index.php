@@ -34,15 +34,15 @@
   $image = $db->allimage();
 ?>
 <section class="events" style="padding-bottom:100px;">
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <h1 class="text-center col-md-12 events-header">Gallery</h1>
         <?php 
           while($data = mysqli_fetch_assoc($image)){
         ?>
-        <div class="col-lg-3 mr-2">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-fluid"  src="<?php echo $data['image'] ?>" alt="Card image cap">
+        <div class="col-lg-3 mb-3">
+            <div class="card" style="width: 22rem;">
+              <img class="card-img-top img-fluid" style="width:100%;height:250px;"  src="<?php echo $data['image'] ?>" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $data['title'] ?></h5>
                 <p class="card-text"><?php echo $data['description'] ?></p>
